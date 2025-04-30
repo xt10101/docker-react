@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Debug: Show if secrets exist
+      - name: Show if secrets exist
         run: |
           echo "Username length: ${#DOCKER_USERNAME}"
           echo "Password length: ${#DOCKER_PASSWORD}"
