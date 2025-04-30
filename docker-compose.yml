@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    build:  #custom build name
+     context: .
+     dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+    - /app/node_modules
+    - .:/app #: to map different fodlers
+
+  tests:
+    build:
+      context: .
+      dockerfile:  Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app #: to map different fodlers
+    command: ["npm", "run", "test"]
