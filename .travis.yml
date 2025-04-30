@@ -5,7 +5,7 @@ services: #automatically install  a copy of docker
   - docker
 
 before_install: #steps that need to happen before running project or tes
-  - docker build -t xt10101/docker-react -f Dockerfile.dev . #build web docker image
+  - docker build -t xt10101/docker-react -f Dockerfile.dev . #build web docker images
 
 
 script:
