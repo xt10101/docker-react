@@ -1,0 +1,12 @@
+sudo: required # give super user permsissions
+
+
+services: #automatically install  a copy of docker 
+  - docker
+
+before_install: #steps that need to happen before running project or test
+  - docker build -t xt10101/docker-react -f Dockerfile.dev . #build web docker image
+
+
+script:
+  - docker run -e CI=true git xt10101/docker-react npm run test
